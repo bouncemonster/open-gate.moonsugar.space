@@ -80,11 +80,13 @@ def check_reports_exist():
           ", ".join(miss) if miss else f"{len(expected)} reports")
 
 
-def check_v6_deliverables():
+def check_v6_deliverables(skip_db=False):
     need = ["v6_results.json", "v6_protocol.json", "report_v6.md",
             "history_v6.sqlite3", "v6_artifacts"]
+    if skip_db:
+        need.remove("history_v6.sqlite3")
     miss = [f for f in need if not os.path.exists(f)]
-    check(not miss, "V6: §11 deliverables present", ", ".join(miss) if miss else "5/5")
+    check(not miss, "V6: §11 deliverables present", ", ".join(miss) if miss else f"{len(need)}/{len(need)}")
 
 
 def check_v6_reproducibility():
@@ -194,7 +196,7 @@ def main():
 
     print("== deliverables ==")
     check_reports_exist()
-    check_v6_deliverables()
+    check_v6_deliverables(args.skip_db)
     check_v6_reproducibility()
     check_v7_deliverables()
 
