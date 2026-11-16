@@ -1,5 +1,7 @@
 # proof_of_simulation — project instructions
 
+For continuation, read [CODEX_CONTINUATION.md](CODEX_CONTINUATION.md) for the dated accepted scope and next bounded task before selecting commands. The project boundaries below remain in force.
+
 ## Overview
 Autonomous scientific-computing research on whether hidden computational
 constraints are detectable. V1–V5.5 (passive substrate-fingerprint line) are all
