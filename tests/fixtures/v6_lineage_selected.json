@@ -1,0 +1,134 @@
+{
+  "provenance": "Selected cached rows and metric records read from existing history_v6.sqlite3, source main 371a89a6c20204f683cd2b32117e6e73ae499b68; no pipeline rerun. Fixture contains three selected rows, not the full benchmark.",
+  "meta": {
+    "branch": "active_response_operator",
+    "protocol_hash": "99054d610b0d588f",
+    "final_status": "ACTIVE_COMPUTATIONAL_SIGNATURE",
+    "never_emits": "SIMULATION_DETECTED",
+    "base_seed": "20260920"
+  },
+  "worlds": [
+    [
+      "G01_isotropic",
+      "continuous",
+      308136149,
+      "train",
+      "{\"mag_final\": 0.08238305044570024, \"energy\": 3.9887700183439447, \"decay\": 0.21669904103038853, \"locality\": 0.8536126719187943, \"speed\": 7, \"superposition_err\": 2.15636004826155e-16, \"superposition_path\": 1.6865010355652178e-16, \"symmetry_err\": 0.0, \"path_dependence\": 0.1450616684253665, \"composition_err\": 1.4354946908326201e-16, \"repeatability_err\": 0.0, \"recurrence\": 0.0, \"collision\": 0.0, \"eff_rank\": 0.375}",
+      "{\"b_mean\": 1.0, \"b_var\": 0.0, \"b_min\": 1.0, \"b_max\": 1.0, \"b_range\": 0.0}"
+    ],
+    [
+      "G01_isotropic",
+      "continuous_alt",
+      308136149,
+      "train",
+      "{\"mag_final\": 0.08238305044570024, \"energy\": 3.9887700183439447, \"decay\": 0.21669904103038853, \"locality\": 0.8536126719187943, \"speed\": 7, \"superposition_err\": 2.15636004826155e-16, \"superposition_path\": 1.6865010355652178e-16, \"symmetry_err\": 0.0, \"path_dependence\": 0.1450616684253662, \"composition_err\": 2.2378199869515074e-16, \"repeatability_err\": 0.0, \"recurrence\": 0.0, \"collision\": 0.0, \"eff_rank\": 0.375}",
+      "{\"b_mean\": 1.0, \"b_var\": 0.0, \"b_min\": 1.0, \"b_max\": 1.0, \"b_range\": 0.0}"
+    ],
+    [
+      "G01_isotropic",
+      "fixed_point",
+      308136149,
+      "train",
+      "{\"mag_final\": 0.08616263691415206, \"energy\": 3.8669381469624504, \"decay\": 0.22590678594253827, \"locality\": 0.9999999999958333, \"speed\": 2, \"superposition_err\": 0.31851102863290653, \"superposition_path\": 0.147894222045025, \"symmetry_err\": 0.0, \"path_dependence\": 0.12427395319955746, \"composition_err\": 0.20608503698855954, \"repeatability_err\": 0.0, \"recurrence\": 0.4, \"collision\": 0.5, \"eff_rank\": 0.75}",
+      "{\"b_mean\": 1.0, \"b_var\": 0.0, \"b_min\": 1.0, \"b_max\": 1.0, \"b_range\": 0.0}"
+    ]
+  ],
+  "metrics": [
+    [
+      1,
+      "c6_baseline_null",
+      "accuracy",
+      0.5,
+      "pre-intervention baseline continuous-vs-computational",
+      "2026-09-20T14:21:24.328020"
+    ],
+    [
+      2,
+      "c6_baseline_null",
+      "n_pairs",
+      160,
+      "pre-intervention baseline continuous-vs-computational",
+      "2026-09-20T14:21:24.328020"
+    ],
+    [
+      3,
+      "c6_baseline_null",
+      "expected",
+      0.5,
+      "pre-intervention baseline continuous-vs-computational",
+      "2026-09-20T14:21:24.328020"
+    ],
+    [
+      4,
+      "primary",
+      "accuracy",
+      1,
+      "response-operator discrimination continuous vs computational",
+      "2026-09-20T14:21:24.328020"
+    ],
+    [
+      5,
+      "primary",
+      "n_pairs",
+      80,
+      "response-operator discrimination continuous vs computational",
+      "2026-09-20T14:21:24.328020"
+    ],
+    [
+      6,
+      "primary",
+      "ci95[0]",
+      1,
+      "response-operator discrimination continuous vs computational",
+      "2026-09-20T14:21:24.328020"
+    ],
+    [
+      7,
+      "primary",
+      "ci95[1]",
+      1,
+      "response-operator discrimination continuous vs computational",
+      "2026-09-20T14:21:24.328020"
+    ],
+    [
+      8,
+      "primary",
+      "null",
+      0.5,
+      "response-operator discrimination continuous vs computational",
+      "2026-09-20T14:21:24.328020"
+    ],
+    [
+      9,
+      "primary",
+      "in_sample_diagnostic",
+      1,
+      "response-operator discrimination continuous vs computational",
+      "2026-09-20T14:21:24.328020"
+    ],
+    [
+      10,
+      "C1_equivalent_implementation",
+      "accuracy",
+      0.5,
+      null,
+      "2026-09-20T14:21:24.328020"
+    ],
+    [
+      11,
+      "C1_equivalent_implementation",
+      "n_pairs",
+      40,
+      null,
+      "2026-09-20T14:21:24.328020"
+    ],
+    [
+      12,
+      "C1_equivalent_implementation",
+      "expected",
+      0.5,
+      null,
+      "2026-09-20T14:21:24.328020"
+    ]
+  ]
+}

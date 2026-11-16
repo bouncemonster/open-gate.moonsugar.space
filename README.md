@@ -81,8 +81,8 @@ Compiler installation does not automatically establish a valid `PATH`; verify th
 Clone the source and run the repository's own verification entry point before starting a research run:
 
 ```sh
-git clone https://github.com/bouncemonster/project-open-gate.git
-cd project-open-gate
+git clone https://github.com/bouncemonster/open-gate.moonsugar.space.git
+cd open-gate.moonsugar.space
 python verify.py --skip-db
 ```
 
@@ -94,6 +94,42 @@ python verify.py --quick
 ```
 
 `verify.py` checks compilation, local imports, report lineage, the frozen V6 protocol hash, V7 control artifacts and, unless skipped, SQLite integrity. It is a repository-consistency check, **not validation of the physical hypothesis**. Compilation can create build artifacts even though the audit does not run a new research experiment.
+
+### Audit a stored V6 row without rerunning the benchmark
+
+SQLite integrity and source/report consistency do not establish the provenance
+of an individual cached row. With the existing **quiescent** V6 evidence store,
+inspect one computational world and its paired continuous controls:
+
+```sh
+python audit_v6_lineage.py --root . --generator G01_isotropic --mechanism fixed_point --seed 308136149
+```
+
+The command reads the frozen source definitions without importing the project
+modules, checks raw source/protocol/results/report hashes, the database metadata,
+seed schedule, generator/mechanism/group, finite cached features, matched baseline,
+implementation-control tolerance and the corresponding stored metrics. It opens
+SQLite read-only and verifies input hashes again before returning. A database
+with WAL/shared-memory/journal files is refused; no checkpoint or cleanup is run.
+The selected database must stay within `--root` and be at most 16 MiB.
+
+Output is JSON: exit **0** means the bounded checks passed; **1** means inconsistent
+evidence; **2** means unavailable evidence. `history_v6.sqlite3` remains excluded
+from Git, so a source-only clone does not provide the evidence needed for this
+command. The regression suite creates disposable databases from three preserved
+cache rows and never writes the research store:
+
+```sh
+python -m unittest discover -s tests -p test_v6_lineage.py -v
+```
+
+The cache contains **features, not raw trajectories**. In the recorded selected
+pair, the continuous implementations differ by about `3.05e-16` in operator
+features, below the frozen `1e-9` tie tolerance. This is tolerance evidence;
+the stored `bitwise_identical_response` flag is not newly authenticated by the
+cache. A PASS neither authenticates historical execution nor replicates the
+whole benchmark, establishes a new experimental result or validates a physical
+hypothesis. Frozen sources, protocols, results and databases remain unchanged.
 
 The deeper deterministic validation entry point is:
 
